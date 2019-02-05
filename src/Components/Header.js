@@ -6,10 +6,15 @@ import {
     NavbarToggler,
     NavbarBrand,
     Nav,
-    NavItem,
     NavLink,
-    
+    NavItem
 } from 'reactstrap';
+
+import {
+  Route,
+  NavLink as RRNavLink,
+  HashRouter
+} from "react-router-dom";
 
 class Header extends Component {
     constructor(props) {
@@ -28,24 +33,30 @@ class Header extends Component {
     render(){
         return(
            <Navbar color="inverse" light expand="md">
-            <NavbarBrand href="/">Mint Commerce</NavbarBrand>
+            
+            <NavbarBrand to="/" tag={RRNavLink}>Mint Commerce</NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
+
             <Collapse isOpen={this.state.isOpen} navbar>
                 <Nav className="ml-auto" navbar>
                     <NavItem>
-                        <NavLink href="/Category/">Category</NavLink>
+                        <NavLink to="/" tag={RRNavLink}>Home</NavLink>
                     </NavItem>
                     <NavItem>
-                        <NavLink href="/Category/">Category</NavLink>
+                        <NavLink to="/Category/" tag={RRNavLink}>Categories</NavLink>
                     </NavItem>
                     <NavItem>
-                        <NavLink href="/Category/">Category</NavLink>
+                        <NavLink to="/Checkout/" tag={RRNavLink}>Checkout</NavLink>
                     </NavItem>
                     <NavItem>
-                        <NavLink href="#">Carrito(0)</NavLink>
+                        <NavLink to="/Login/" tag={RRNavLink}>Login</NavLink>
+                    </NavItem>
+                    <NavItem>
+                        <NavLink to="#">Carrito(0)</NavLink>
                     </NavItem>
                 </Nav>
             </Collapse>
+
         </Navbar>
         );
     }

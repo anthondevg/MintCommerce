@@ -1,9 +1,15 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+
+//components
 import Header from './Components/Header';
-import Signin from './Components/Signin';
-import Product from './Components/Product';
+
+// views
+import Home from "./Views/Home";
+import Category from "./Views/Category";
+import Checkout from "./Views/Checkout";
+import Login from "./Views/Login";
 
 import {
   Route,
@@ -12,36 +18,25 @@ import {
 } from "react-router-dom";
 
 import {
-    Container,
-    Row,
-    Col,
-    Jumbotron,
-    Button
+	Container
 } from 'reactstrap';
-
 
 class App extends React.Component {
     
     render() {
         return (
-            <div>
-               	<Header />
-                <Container>
-                    <Row>
-                        <Col xs="12" sm="2" className="mt-1">
-                        	<Signin />
-                        </Col>
-      					<Col xs="12" sm="10">
-							<Row>
-		                        <Product />
-		                        <Product />
-		                        <Product />
-		                        <Product />
-							</Row>
-      					</Col>
-                    </Row>
-                </Container>
-            </div>
+            <HashRouter>
+	            <div>
+	               	<Header className="header" />
+
+	                <Container className="content">
+	                	<Route exact path="/" component={Home}/>
+			            <Route path="/Category" component={Category}/>
+			            <Route path="/Checkout" component={Checkout}/>
+			            <Route path="/Login" component={Login}/>
+	                </Container>    
+	            </div>
+            </HashRouter>
         );
     }
 }
