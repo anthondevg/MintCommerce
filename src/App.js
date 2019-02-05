@@ -1,28 +1,49 @@
-import React, { Component } from 'react';
+import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Header from './Components/Header';
+import Signin from './Components/Signin';
+import Product from './Components/Product';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+import {
+  Route,
+  NavLink,
+  HashRouter
+} from "react-router-dom";
+
+import {
+    Container,
+    Row,
+    Col,
+    Jumbotron,
+    Button
+} from 'reactstrap';
+
+
+class App extends React.Component {
+    
+    render() {
+        return (
+            <div>
+               	<Header />
+                <Container>
+                    <Row>
+                        <Col xs="12" sm="2" className="mt-1">
+                        	<Signin />
+                        </Col>
+      					<Col xs="12" sm="10">
+							<Row>
+		                        <Product />
+		                        <Product />
+		                        <Product />
+		                        <Product />
+							</Row>
+      					</Col>
+                    </Row>
+                </Container>
+            </div>
+        );
+    }
 }
 
 export default App;
