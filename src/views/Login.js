@@ -8,9 +8,14 @@ import {
  CardBody,
  CardTitle,
  CardSubtitle,
- Button }from  'reactstrap';
+ Button } from  'reactstrap';
 
 class Product extends React.Component{
+	constructor(props){
+		super(props);
+
+		this.state = {}
+	}
 	render(){
 		return(
 			<Col xs="6" sm="4" className="mt-1">

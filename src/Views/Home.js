@@ -1,24 +1,27 @@
 import React from 'react';
 import Signin from '../Components/Signin';
-import Product from '../Components/Product';
+import ProductTable from '../Components/ProductTable';
 
 import { 
  Row,
- Col, }from  'reactstrap';
+ Col, } from  'reactstrap';
 
 class Home extends React.Component{
+	
 	render(){
 		return(
 			<Row>
-                <Col xs="12" sm="2" className="mt-1">
+                <Col xs="12" sm="3" className="mt-2">
                 	<Signin />
                 </Col>
-					<Col xs="12" sm="10">
+					<Col xs="12" sm="9">
+
 					<Row>
-                        <Product />
-                        <Product />
-                        <Product />
-                        <Product />
+						<h3>Productos Disponibles.</h3>
+					</Row>
+					
+					<Row>
+                        <ProductTable />
 					</Row>
 					</Col>
             </Row>

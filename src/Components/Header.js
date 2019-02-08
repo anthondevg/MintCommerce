@@ -1,3 +1,4 @@
+
 import React, { Component } from "react";
  
 import {
@@ -7,7 +8,8 @@ import {
     NavbarBrand,
     Nav,
     NavLink,
-    NavItem
+    NavItem,
+    Button
 } from 'reactstrap';
 
 import {
@@ -17,18 +19,39 @@ import {
 } from "react-router-dom";
 
 class Header extends Component {
+
     constructor(props) {
         super(props);
 
         this.toggle = this.toggle.bind(this);
         this.state = {
-            isOpen: false
+            isOpen: false,
+            authenticated: null,
         };
+
+        this.checkAuthentication = this.checkAuthentication.bind(this);
+        this.login = this.login.bind(this);
+        this.logout = this.logout.bind(this);
+
     }
     toggle() {
         this.setState({
             isOpen: !this.state.isOpen
         });
+    } 
+       
+    checkAuthentication(){
+
+    }
+    componentDidUpdate(){
+    }
+
+    login(){
+
+    } 
+
+    logout(){
+
     }
     render(){
         return(
@@ -38,23 +61,28 @@ class Header extends Component {
             <NavbarToggler onClick={this.toggle} />
 
             <Collapse isOpen={this.state.isOpen} navbar>
+            
                 <Nav className="ml-auto" navbar>
+                    
                     <NavItem>
-                        <NavLink to="/" tag={RRNavLink}>Home</NavLink>
+                        <NavLink to="/" color="primary" tag={RRNavLink} active>Home</NavLink>
                     </NavItem>
+                
                     <NavItem>
                         <NavLink to="/Category/" tag={RRNavLink}>Categories</NavLink>
                     </NavItem>
+                    
                     <NavItem>
-                        <NavLink to="/Checkout/" tag={RRNavLink}>Checkout</NavLink>
+                    
+                       <NavLink to="/Login/" tag={RRNavLink}>Login</NavLink>
                     </NavItem>
+                    
                     <NavItem>
-                        <NavLink to="/Login/" tag={RRNavLink}>Login</NavLink>
+                        <NavLink to="/Checkout/" tag={RRNavLink}>Carrito(0)</NavLink>
                     </NavItem>
-                    <NavItem>
-                        <NavLink to="#">Carrito(0)</NavLink>
-                    </NavItem>
+                
                 </Nav>
+
             </Collapse>
 
         </Navbar>

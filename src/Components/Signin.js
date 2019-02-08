@@ -1,4 +1,5 @@
 import React from 'react';
+import '../Assets/css/signin.css';
 import {
     Form,
     FormGroup,
@@ -10,7 +11,7 @@ import {
 class Signin extends React.Component{
   render(){
     return(
-        <Form>  
+        <Form className="sign-wrapper">  
           <h3>Iniciar Sesion</h3>
           <FormGroup>
             <Label for="username" className="text-muted">Usuario</Label>

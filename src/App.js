@@ -21,20 +21,23 @@ import {
 	Container
 } from 'reactstrap';
 
+
 class App extends React.Component {
     
     render() {
         return (
+
             <HashRouter>
+            	 
 	            <div>
 	               	<Header className="header" />
 
-	                <Container className="content">
+	                <Container fluid={true} className="content">
 	                	<Route exact path="/" component={Home}/>
-			            <Route path="/Category" component={Category}/>
+	                	<Route path="/Login" component={Login}/>
+                        <Route path="/Category" component={Category}/>
 			            <Route path="/Checkout" component={Checkout}/>
-			            <Route path="/Login" component={Login}/>
-	                </Container>    
+	                </Container> 
 	            </div>
             </HashRouter>
         );
