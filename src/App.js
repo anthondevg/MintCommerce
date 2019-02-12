@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 //components
@@ -10,11 +9,13 @@ import Home from "./Views/Home";
 import Category from "./Views/Category";
 import Checkout from "./Views/Checkout";
 import Login from "./Views/Login";
+import Signup from "./Views/Signup";
+import NoMatch from "./Views/Nomatch";
 
 import {
   Route,
-  NavLink,
-  HashRouter
+  HashRouter,
+  Switch
 } from "react-router-dom";
 
 import {
@@ -27,16 +28,19 @@ class App extends React.Component {
     render() {
         return (
 
-            <HashRouter>
-            	 
+            <HashRouter>	 
 	            <div>
 	               	<Header className="header" />
 
 	                <Container fluid={true} className="content">
+                        <Switch>
 	                	<Route exact path="/" component={Home}/>
 	                	<Route path="/Login" component={Login}/>
+                        <Route path="/Signup" component={Signup}/>
                         <Route path="/Category" component={Category}/>
-			            <Route path="/Checkout" component={Checkout}/>
+                        <Route path="/Checkout" component={Checkout}/>
+			            <Route component={NoMatch}/>
+                        </Switch>
 	                </Container> 
 	            </div>
             </HashRouter>

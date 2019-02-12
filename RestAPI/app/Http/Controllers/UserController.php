@@ -27,8 +27,23 @@ class UserController extends Controller
     public function create()
     {
         //
-    }
 
+    }
+    public function addUser(Request $request){
+        //
+        $request->validate([
+            'name' => 'required|max:255',
+            'surname' => 'required',
+            'email' => 'required',
+            'password' => 'required'
+        ]);
+
+        $user = User::create($request->all());
+        
+        return (new UserResource($user))
+                ->response()
+                ->setStatusCode(201);
+    }
     /**
      * Store a newly created resource in storage.
      *
@@ -38,6 +53,7 @@ class UserController extends Controller
     public function store(Request $request)
     {
         //
+        
     }
 
     /**

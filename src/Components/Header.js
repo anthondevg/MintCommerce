@@ -8,14 +8,11 @@ import {
     NavbarBrand,
     Nav,
     NavLink,
-    NavItem,
-    Button
+    NavItem
 } from 'reactstrap';
 
 import {
-  Route,
   NavLink as RRNavLink,
-  HashRouter
 } from "react-router-dom";
 
 class Header extends Component {
@@ -65,18 +62,21 @@ class Header extends Component {
                 <Nav className="ml-auto" navbar>
                     
                     <NavItem>
-                        <NavLink to="/" color="primary" tag={RRNavLink} active>Home</NavLink>
+                        <NavLink to="/" color="primary" tag={RRNavLink} active>Inicio</NavLink>
                     </NavItem>
                 
                     <NavItem>
-                        <NavLink to="/Category/" tag={RRNavLink}>Categories</NavLink>
+                        <NavLink to="/Category/" tag={RRNavLink}>Categorias</NavLink>
                     </NavItem>
                     
                     <NavItem>
                     
-                       <NavLink to="/Login/" tag={RRNavLink}>Login</NavLink>
+                       <NavLink to="/Login/" tag={RRNavLink}>Iniciar Sesion</NavLink>
                     </NavItem>
+                     <NavItem>
                     
+                       <NavLink to="/Signup/" tag={RRNavLink}>Registrarse</NavLink>
+                    </NavItem>
                     <NavItem>
                         <NavLink to="/Checkout/" tag={RRNavLink}>Carrito(0)</NavLink>
                     </NavItem>

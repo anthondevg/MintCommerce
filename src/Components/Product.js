@@ -20,7 +20,7 @@ class Product extends React.Component{
 		return(
 			<Col xs="6" sm="4" className="mt-1">
 				<Card>
-					<CardImg top width="100%" src="https://http2.mlstatic.com/franela-unicolor-para-estampar-D_NQ_NP_802215-MLV25164157741_112016-F.jpg" alt="Franela Nike negra" />
+					<CardImg top width="100%" src="https://www.pimkie.es/on/demandware.static/-/Sites-pimkie-master-catalog/default/dw5f30befa/images/561241_326B06_portrait_HD_1.JPG" alt="Franela Nike negra" />
 					<CardBody>
 						<CardTitle>{this.props.title}</CardTitle>
 
@@ -30,7 +30,7 @@ class Product extends React.Component{
 							{this.props.description}
 						</CardText>
 
-						<span>{this.props.price}</span>
+						<span>${this.props.price}USD</span>
 						
 						<Button>Comprar</Button>
 					</CardBody>

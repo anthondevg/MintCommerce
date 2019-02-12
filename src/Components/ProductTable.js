@@ -2,6 +2,9 @@ import React from 'react';
 
 import Product from '../Components/Product.js';
 
+import { 
+ Row } from  'reactstrap';
+
 class ProductTable extends React.Component{
 
 	constructor(props){
@@ -27,7 +30,6 @@ class ProductTable extends React.Component{
 					
 					this.setState({products: this.state.products.concat([data])});
 
-					console.log(this.state.products);
 				});
 		});
 			
@@ -38,14 +40,13 @@ class ProductTable extends React.Component{
 
 		if (this.state.products.length > 0) {
 			return(	
-				<span>
+				<Row>
 				{
-					this.state.products.map(product=>
-						<Product title={product.title} description={product.description} price={product.price} />
+					this.state.products.map(
+						product=><Product title={product.title} description={product.description} price={product.price} />
 					)
-
 				}	
-				</span>
+				</Row>
 			);
 		}
 

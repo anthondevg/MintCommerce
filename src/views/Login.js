@@ -1,16 +1,10 @@
 import React from 'react';
 
 import { 
- Col,
- Card,
- CardImg,
- CardText,
- CardBody,
- CardTitle,
- CardSubtitle,
- Button } from  'reactstrap';
+  Container,Jumbotron,Col,Row, Button, Form, FormGroup, Label, Input 
+} from 'reactstrap';
 
-class Product extends React.Component{
+class Login extends React.Component{
 	constructor(props){
 		super(props);
 
@@ -18,23 +12,31 @@ class Product extends React.Component{
 	}
 	render(){
 		return(
-			<Col xs="6" sm="4" className="mt-1">
-				<Card>
-					<CardImg top width="100%" src="https://http2.mlstatic.com/franela-unicolor-para-estampar-D_NQ_NP_802215-MLV25164157741_112016-F.jpg" alt="Franela Nike negra" />
-					<CardBody>
-						<CardTitle>Camisa Nike</CardTitle>
-
-						<CardSubtitle>Card subtitle</CardSubtitle>
-
-						<CardText>
-							Some and make up the bulk of the card's content.
-						</CardText>
-						<Button>Comprar</Button>
-					</CardBody>
-				</Card>
-			</Col>
+			<Container>
+				<Row>
+					<Col xs="6" sm="6" className="mt-1">
+					<Form>
+				        <FormGroup>
+				          <Label for="exampleEmail">Email</Label>
+				          <Input type="email" name="email" id="exampleEmail" placeholder="with a placeholder" />
+				        </FormGroup>
+				        <FormGroup>
+				          <Label for="examplePassword">Password</Label>
+				          <Input type="password" name="password" id="examplePassword" placeholder="password placeholder" />
+				        </FormGroup>
+				        <Button>Iniciar Sesión</Button>
+				    </Form>
+				</Col>
+				<Col xs="6" sm="6" className="mt-1">
+					<Jumbotron>
+						<h1>Iniciar Sesión</h1>
+						<p>Hola, Inicia Sesión!</p>
+					</Jumbotron>
+				</Col>
+				</Row>
+			</Container>
 		);
 	}
 }
 
-export default Product;
+export default Login;

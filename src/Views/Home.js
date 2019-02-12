@@ -12,7 +12,8 @@ class Home extends React.Component{
 		return(
 			<Row>
                 <Col xs="12" sm="3" className="mt-2">
-                	<Signin />
+                	<Signin 
+                	/>
                 </Col>
 					<Col xs="12" sm="9">
 
@@ -20,9 +21,8 @@ class Home extends React.Component{
 						<h3>Productos Disponibles.</h3>
 					</Row>
 					
-					<Row>
-                        <ProductTable />
-					</Row>
+					<ProductTable />
+					
 					</Col>
             </Row>
 		);
