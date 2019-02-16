@@ -14,7 +14,7 @@ class Signup extends React.Component{
 				<Row>
 					<Col xs="12" sm="8">
 						<Register 
-						action="http://mintapi.test/users/add"
+						action="http://mintapi.test/api/user/register"
 						method="POST"
 						/>
 					</Col>

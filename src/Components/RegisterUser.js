@@ -47,7 +47,7 @@ class Register extends React.Component{
 		.then(response=>{
 			
 			console.log('Success ',response);
-			this.setState({redirect:true});
+			//this.setState({redirect:true});
 		});
 
 	}

@@ -30,7 +30,7 @@ class Product extends React.Component{
 							{this.props.description}
 						</CardText>
 
-						<span>${this.props.price}USD</span>
+						<p>${this.props.price}USD</p>
 						
 						<Button>Comprar</Button>
 					</CardBody>
